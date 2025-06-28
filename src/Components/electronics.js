@@ -2,13 +2,13 @@ import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import MainMenu from "./mainmenu";
+import useFetch from "./usefetch";
 
 function Products() {
-    const [products, setProducts] = useState([]);
+    /*const [products, setProducts] = useState([]);*/
+    const [products] = useFetch("https://fakestoreapi.com/products/category/electronics");
     
-    const [error, setError] = useState("");
-
-    useEffect(() => {
+    /*useEffect(() => {
         fetch("https://fakestoreapi.com/products/category/electronics")
             .then((res) => res.json())
             .then((data) => {
@@ -22,7 +22,7 @@ function Products() {
     }, []);
 
    
-    if (error) return <div className="alert alert-danger text-center">{error}</div>;
+    if (error) return <div className="alert alert-danger text-center">{error}</div>;*/
 
     return (
         <div className="container">

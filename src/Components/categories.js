@@ -2,17 +2,19 @@ import React, { useState, useEffect } from "react";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min';
 import { Link } from "react-router-dom";
+import useFetch from "./usefetch";
 
 function Category({ setShowMainMenu }) {
-    const [categories, setCategories] = useState([]);
+    /*const [categories, setCategories] = useState([]);*/
+    const [categories] = useFetch("https://fakestoreapi.com/products/categories");
     
 
-    useEffect(() => {
+  /*  useEffect(() => {
         fetch("https://fakestoreapi.com/products/categories")
             .then((response) => response.json())
             .then((data) => setCategories(data))
             .catch((error) => console.error("Error fetching categories:", error));
-    }, []);
+    }, []);*/
 
    
 
