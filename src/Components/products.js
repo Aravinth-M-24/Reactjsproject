@@ -53,7 +53,7 @@ function ProductDetails() {
                         <strong style={{fontFamily:"cursive"}}>Category:</strong> {product.category}
                     </p>
                     <div style={{textAlign:'center'}}>
-                        <Link to="cart" className="btn btn-warning "  >Add to Cart</Link>
+                        <Link to={`/cart/${product.id}`} className="btn btn-warning "  >Add to Cart</Link>
                     </div>
                 </div>
             </div>

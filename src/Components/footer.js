@@ -5,7 +5,7 @@ import 'bootstrap/dist/js/bootstrap.bundle.min';
 
 function Footer() {
     return (
-        <footer className="footer" style={{height:"100vh"}}>
+        <footer className="footer">
   <div className="footer-container">
     <div className="footer-section">
       <h4>About Us</h4>

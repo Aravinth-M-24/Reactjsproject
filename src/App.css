@@ -70,7 +70,6 @@ nav .logo {
 .card{
     display: flex;
     justify-content: center;
-    align-items: center;
     height: 100vh;
     background-color: #f4f4f4;
     box-shadow: #333 0px 0px 10px;

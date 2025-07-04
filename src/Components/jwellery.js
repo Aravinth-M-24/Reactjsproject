@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min';
 import MainMenu from './mainmenu'
-
+import { Link } from "react-router-dom";
 function Jwellery() {
   const [jwellery, setJwellery] = useState([]);
 
@@ -38,9 +38,11 @@ function Jwellery() {
                   Description: {item.description.length > 100 ? item.description.slice(0, 100) + "..." : item.description}
                 </p>
               </div>
-              <div className="card-footer d-flex justify-content-between align-items-center">
-                <span className="text-success fw-bold">Rs {item.price}</span>
-                <button className="btn btn-warning">Add to Cart</button>
+              <p style={{color:"green",fontSize:"25px"}}>price:{item.price}</p>
+              <div className=" d-flex  mt-5 mb-5">
+                
+                 <Link to={`/products/${item.id}`} className="btn btn-primary">View Product</Link>
+             
               </div>
             </div>
           </div>

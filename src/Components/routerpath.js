@@ -29,6 +29,7 @@ function Routerpath() {
                     <Route path="electronics" element={<Products />} />
                     <Route path="products/:id" element={<ProductDetails  />} />
                     <Route path="Table" element={<ShowTable  />} />
+                    <Route path="cart/:id" element={<Cart  />} />
                 </Route>
             </Routes>
         </BrowserRouter>
