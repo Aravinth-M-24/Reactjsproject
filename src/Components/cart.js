@@ -28,24 +28,24 @@ function Cart() {
     return (
        
        <>
-       <div className="card container mt-5">
+       <div className="card  mt-5 p-2 container">
         <div className=" text-start fw-bolder fs-2 p-3">
             Shopping cart
             <hr className="my-5 border border-dark"></hr>
         </div>
         <div className="mt-3 d-flex">
-            <div  className="mb-5 card-body card-img-top">
-               <img src={item.image} style={{height:"300PX" ,width:"200PX"}}></img>
+            <div  className="mb-5 card-body ">
+               <img src={item.image} style={{height:"100px" ,width:"100px"}}></img>
             </div>  
             <div>
-                <p className="text-center fw-bolder fs-3">{item.category}</p>
+                <p className="text-center fw-bolder ">{item.category}</p>
                 <p className="fw-bold mt-2">{item.title}</p>
                 <p className="fw-lighter">{item.description}</p>
-               <div className="" style={{display:"flex" ,gap:"25px"}}>
-                <span className="fs-5 fw-bolder" style={{backgroundColor:"gray", color:"white",borderRadius:"5px"}} >In Stock: {item.rating.count}</span>
-                <span className="fs-5 fw-bolder  bg-warning" style={{ borderRadius:"5px"}}> Rating:  {item.rating.rate}</span>
+               <div className="" style={{display:"flex" ,gap:"10px"}}>
+                <span className=" fw-bolder" style={{backgroundColor:"gray", color:"white",borderRadius:"5px"}} >In Stock: {item.rating.count}</span>
+                <span className="fw-bolder  bg-warning" style={{ borderRadius:"5px"}}> Rating:  {item.rating.rate}</span>
              </div>
-             <p className="mt-2 fw-bolder fs-4 text-success">price: {item.price}</p>
+             <p className="mt-2 fw-bolder  text-success">price: {item.price}</p>
              <div style={{textAlign:"center"}}>
                 <span className="btn btn-danger mt-5 " > Buy now</span>
              </div>
