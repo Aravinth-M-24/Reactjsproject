@@ -37,11 +37,8 @@ function Menc() {
                                     <h5 className="card-title">{item.title}</h5>
                                     <p className="card-text">{item.description.substring(0, 100)}...</p>
                                 </div>
-                                <p style={{color:"green",fontSize:"25px"}}>price:{item.price}</p>
-                                <div className="mt-5 mb-5">
-                                    
-                                     <Link to={`/products/${item.id}`} className="btn btn-primary">View Product</Link>
-                                </div>
+                                <p style={{color:"green",fontSize:"25px", marginLeft:"25px"}}>price:{item.price}</p>
+                                <Link to={`/products/${item.id}`} className="btn btn-primary">View Product</Link>
                             </div>
                         </div>
                     ))}

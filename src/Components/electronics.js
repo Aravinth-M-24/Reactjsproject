@@ -25,8 +25,9 @@ function Products() {
     if (error) return <div className="alert alert-danger text-center">{error}</div>;*/
 
     return (
+        <div> <MainMenu/>
         <div className="container">
-            <MainMenu/>
+           
             <h2 className="text-center my-4">Electronics Collection</h2>
             <div className="row">
                 {products.map(product => (
@@ -55,6 +56,7 @@ function Products() {
                     </div>
                 ))}
             </div>
+        </div>
         </div>
     );
 }

@@ -14,10 +14,10 @@ function Jwellery() {
   }, []);
 
   return (
-    
+    <div><MainMenu/>
     <div className="container">
       
-      <MainMenu/>
+      
 
       <div>
         <h1 className="text-center my-4">JEWELERY</h1>
@@ -38,16 +38,13 @@ function Jwellery() {
                   Description: {item.description.length > 100 ? item.description.slice(0, 100) + "..." : item.description}
                 </p>
               </div>
-              <p style={{color:"green",fontSize:"25px"}}>price:{item.price}</p>
-              <div className=" d-flex  mt-5 mb-5">
-                
-                 <Link to={`/products/${item.id}`} className="btn btn-primary">View Product</Link>
-             
-              </div>
+                <p className="card-text fw-bold text-success"> ${item.price.toFixed(2)}  </p>
+                 <Link to={`/products/${item.id}`} className="btn btn-primary " >View Product</Link>                                                 
             </div>
           </div>
         ))}
       </div>
+    </div>
     </div>
   );
 }

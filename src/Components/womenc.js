@@ -14,8 +14,9 @@ function Womenc() {
     }, []);
 
     return (
+        <div><MainMenu/>
         <div className="container">
-            <MainMenu/>
+            
             <h1 className="text-center my-4">WOMEN'S COLLECTION</h1>
             <div className="row">
                 {collection.map((item) => (
@@ -33,15 +34,17 @@ function Womenc() {
                                     {item.description.length > 100 ? item.description.substring(0, 100) + "..." : item.description}
                                 </p>
                             </div>
-                            <p style={{color:"green",fontSize:"25px"}}>price:{item.price}</p>
-                            <div className="mt-5 mb-5">
-                                
-                                 <Link to={`/products/${item.id}`} className="btn btn-primary">View Product</Link>
+                            <div style={{alignItems:"center"}}> 
+                            <p style={{color:"green",fontSize:"25px",marginLeft:"20px"}}>price:{item.price}</p>
+                            
+                                 <Link to={`/products/${item.id}`} className="btn btn-primary mb-3 " style={{ marginLeft:"20px"}}>View Product</Link>
+                            
                             </div>
                         </div>
                     </div>
                 ))}
             </div>
+        </div>
         </div>
     );
 }

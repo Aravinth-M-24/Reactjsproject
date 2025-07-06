@@ -35,8 +35,8 @@ function Cart() {
         </div>
         <div className="mt-3 d-flex">
             <div  className="mb-5 card-body card-img-top">
-               <img src={item.image} style={{height:"300px"}}></img>
-            </div>
+               <img src={item.image} style={{height:"300PX" ,width:"200PX"}}></img>
+            </div>  
             <div>
                 <p className="text-center fw-bolder fs-3">{item.category}</p>
                 <p className="fw-bold mt-2">{item.title}</p>
@@ -51,8 +51,9 @@ function Cart() {
              </div>
              
             </div>
+            
         </div>
-
+        <hr className="my-5 mt-3 mb-5 border border-dark"></hr>
        </div>
        </>
        
