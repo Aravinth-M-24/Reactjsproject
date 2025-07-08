@@ -46,7 +46,7 @@ function ShowTable() {
 
   return (
     <div className="container mt-5">
-      <h2 className="mb-4 text-center">Product List Admin Page (Inline Edit)</h2>
+      <h2 className="mb-4 text-center">Product List Admin Page </h2>
 
       <div className="table-responsive">
         <table className="table table-bordered table-hover align-middle table-striped">
