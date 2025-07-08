@@ -46,87 +46,109 @@ function ShowTable() {
 
   return (
     <div className="container mt-5">
-      <h2 className="mb-4 text-center">Product List Admin-Page (Inline Edit)</h2>
-      <table className="table table-bordered table-hover table-striped">
-        <thead className="table-dark">
-          <tr>
-            <th>ID</th>
-            <th>Title</th>
-            <th>Price ($)</th>
-            <th>Category</th>
-            <th>Image</th>
-            <th colSpan={2} className="text-center">Actions</th>
-          </tr>
-        </thead>
-        <tbody>
-          {data.map((item) => (
-            <tr key={item.id}>
-              <td>{item.id}</td>
-              {editRowId === item.id ? (
-                <>
-                  <td>
-                    <input
-                      type="text"
-                      name="title"
-                      value={editedItem.title}
-                      onChange={handleChange}
-                      className="form-control"
-                    />
-                  </td>
-                  <td>
-                    <input
-                      type="number"
-                      name="price"
-                      value={editedItem.price}
-                      onChange={handleChange}
-                      className="form-control"
-                    />
-                  </td>
-                  <td>
-                    <input
-                      type="text"
-                      name="category"
-                      value={editedItem.category}
-                      onChange={handleChange}
-                      className="form-control"
-                    />
-                  </td>
-                  <td>
-                    <input
-                      type="text"
-                      name="image"
-                      value={editedItem.image}
-                      onChange={handleChange}
-                      className="form-control"
-                    />
-                  </td>
-                  <td>
-                    <button className="btn btn-success btn-sm" onClick={handleSave}>Save</button>
-                  </td>
-                  <td>
-                    <button className="btn btn-secondary btn-sm" onClick={handleCancel}>Cancel</button>
-                  </td>
-                </>
-              ) : (
-                <>
-                  <td>{item.title}</td>
-                  <td>{item.price}</td>
-                  <td>{item.category}</td>
-                  <td>
-                    <img src={item.image} alt={item.title} width="50" height="50" />
-                  </td>
-                  <td>
-                    <button className="btn btn-primary btn-sm" onClick={() => handleEditClick(item)}>Edit</button>
-                  </td>
-                  <td>
-                    <button className="btn btn-danger btn-sm" onClick={() => handleDelete(item.id)}>Delete</button>
-                  </td>
-                </>
-              )}
+      <h2 className="mb-4 text-center">Product List Admin Page (Inline Edit)</h2>
+
+      <div className="table-responsive">
+        <table className="table table-bordered table-hover align-middle table-striped">
+          <thead className="table-dark text-center">
+            <tr>
+              <th>ID</th>
+              <th>Title</th>
+              <th>Price ($)</th>
+              <th>Category</th>
+              <th>Image</th>
+              <th colSpan={2}>Actions</th>
             </tr>
-          ))}
-        </tbody>
-      </table>
+          </thead>
+
+          <tbody>
+            {data.map((item) => (
+              <tr key={item.id}>
+                <td className="text-center">{item.id}</td>
+
+                {editRowId === item.id ? (
+                  <>
+                    <td>
+                      <input
+                        type="text"
+                        name="title"
+                        value={editedItem.title}
+                        onChange={handleChange}
+                        className="form-control form-control-sm"
+                      />
+                    </td>
+                    <td>
+                      <input
+                        type="number"
+                        name="price"
+                        value={editedItem.price}
+                        onChange={handleChange}
+                        className="form-control form-control-sm"
+                      />
+                    </td>
+                    <td>
+                      <input
+                        type="text"
+                        name="category"
+                        value={editedItem.category}
+                        onChange={handleChange}
+                        className="form-control form-control-sm"
+                      />
+                    </td>
+                    <td>
+                      <input
+                        type="text"
+                        name="image"
+                        value={editedItem.image}
+                        onChange={handleChange}
+                        className="form-control form-control-sm"
+                      />
+                    </td>
+                    <td colSpan={2}>
+                      <div className="d-flex justify-content-center gap-2">
+                        <button className="btn btn-success btn-sm" onClick={handleSave}>Save</button>
+                        <button className="btn btn-secondary btn-sm" onClick={handleCancel}>Cancel</button>
+                      </div>
+                    </td>
+                  </>
+                ) : (
+                  <>
+                    <td>{item.title}</td>
+                    <td className="text-center">${item.price.toFixed(2)}</td>
+                    <td>{item.category}</td>
+                    <td className="text-center">
+                      <img
+                        src={item.image}
+                        alt={item.title}
+                        style={{
+                          width: "45px",
+                          height: "45px",
+                          objectFit: "contain"
+                        }}
+                        className="img-thumbnail"
+                      />
+                    </td>
+                    <td>
+                      <div className="d-grid">
+                        <button className="btn btn-primary btn-sm" onClick={() => handleEditClick(item)}>
+                          Edit
+                        </button>
+                      </div>
+                    </td>
+                    <td>
+                      <div className="d-grid">
+                        <button className="btn btn-danger btn-sm" onClick={() => handleDelete(item.id)}>
+                          Delete
+                        </button>
+                      </div>
+                    </td>
+                  </>
+                )}
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
     </div>
   );
 }
