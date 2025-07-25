@@ -58,7 +58,7 @@ function Cart() {
                             <h5 className="text-success fw-bold mt-2">₹ {item?.price}</h5>
 
                             <div className="text-center">
-                                <button className="btn btn-danger mt-4">Buy Now</button>
+                                <Link className="btn btn-danger mt-4" to={`/payment/${item.id}`}>Buy Now</Link>
                             </div>
                         </div>
                     </div>

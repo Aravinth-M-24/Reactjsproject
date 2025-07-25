@@ -1,4 +1,3 @@
-import React, { useState } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Layout from "./Layout";
 import Signin from "./Signin";
@@ -9,12 +8,12 @@ import Jwellery from "./jwellery";
 import Menc from "./Menc";
 import Womenc from "./womenc";
 import Cart from "./cart";
-import ProductDetails from "./products"; // Make sure the file name is correct
+import ProductDetails from "./products";
+import PaymentPage from "./paymentpage"; 
 import ShowTable from "./table";
 
-function Routerpath() {
-   
 
+function Routerpath() {
     return (
         <BrowserRouter>
             <Routes>
@@ -30,6 +29,7 @@ function Routerpath() {
                     <Route path="products/:id" element={<ProductDetails  />} />
                     <Route path="Table" element={<ShowTable  />} />
                     <Route path="cart/:id" element={<Cart  />} />
+                    <Route path="payment/:id" element={<PaymentPage />} />
                 </Route>
             </Routes>
         </BrowserRouter>

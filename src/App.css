@@ -72,7 +72,7 @@ nav .logo {
     justify-content: center;
     height: 100vh;
     background-color: #f4f4f4;
-    box-shadow: #333 0px 0px 10px;
+    
 
 }
 .center{
@@ -89,4 +89,7 @@ nav .logo {
     justify-content: center;
     gap: 20px;
     padding: 20px;
+}
+.body{
+  background-color: rgb(149, 136, 136);
 }
